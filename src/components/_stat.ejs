@@ -1,0 +1,12 @@
+<div class="stonetop-stat">
+  <div class="octagon bg"></div>
+  <div class="octagon"></div>
+  <div class="stonetop-stat-content">
+    <label for="<%= name.toLowerCase() %>">
+      <%= name %>
+    </label>
+    <input id="<%= name.toLowerCase() %>" type="number" name="attr_<%= attr %>" value="0" />
+    <button type="roll" name="roll_<%= attr.toUpperCase() %>Check"
+      value="/em uses <%= name %>, and rolls [[?{Roll Type | Standard, 2d6 + @{<%= attr %>} | Advantage, 3d6d1 + @{<%= attr %>} | Disadvantage, 3d6dh1 + @{<%= attr %>}}]]"></button>
+  </div>
+</div>

@@ -1,0 +1,388 @@
+$black: #3a3a46;
+
+.stonetop-main {
+  display: flex;
+  flex-direction: column;
+
+  * {
+    box-sizing: border-box;
+    color: $black;
+  }
+
+  /* Layout */
+
+  .stonetop-row {
+    display: flex;
+    align-items: center;
+  }
+
+  .stonetop-column-thirds {
+    $margin-size: 30px;
+    align-self: flex-start;
+    flex: 0 0 auto;
+    margin-right: $margin-size;
+    width: calc(33% - #{$margin-size} * 2 / 3);
+  }
+
+  .stonetop-column-thirds:last-of-type {
+    margin-right: 0px;
+  }
+
+  /* General Overrides */
+
+  h3 {
+    margin: 20px 0px;
+  }
+
+  textarea {
+    width: 100%;
+  }
+
+  /* Heading Fields */
+
+  .heading-field {
+    align-items: center;
+    display: flex;
+    max-width: 350px;
+    min-width: 150px;
+    margin: 10px 0px;
+    padding: 0px;
+
+    span {
+      flex: none;
+    }
+
+    input[type='text'] {
+      flex: auto;
+      margin-left: 10px;
+      min-width: 100px;
+    }
+
+    input[type='radio'] {
+      margin-right: 10px;
+    }
+
+    select {
+      margin-left: 10px;
+      margin-bottom: 0px;
+    }
+  }
+
+  /* General Buttons */
+
+  button[type='roll'] {
+    flex: none;
+    height: 23px;
+    width: 23px;
+  }
+
+  /* Stats */
+
+  .stonetop-stat {
+    $margin-size: 15px;
+    $width: calc((100% - #{$margin-size} * 5) / 6);
+
+    height: 100px;
+    margin-bottom: 40px;
+    margin-top: 20px;
+    margin-right: $margin-size;
+    position: relative;
+    width: $width;
+
+    &:last-of-type {
+      margin-right: 0px;
+    }
+
+    .stonetop-stat-content {
+      align-items: center;
+      display: flex;
+      flex-direction: column;
+      height: 100%;
+      justify-content: space-between;
+      left: 0;
+      position: absolute;
+      top: 0;
+      width: 100%;
+      z-index: 10;
+    }
+
+    label {
+      width: auto;
+      padding: 0px;
+    }
+
+    input {
+      max-width: 100%;
+      margin-bottom: 10px;
+    }
+  }
+
+  /* Debilities */
+
+  .stonetop-debility {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    position: relative;
+
+    .stonetop-grouping-image {
+      border: solid $black 2px;
+      border-radius: 0px 0px 1em 1em;
+      border-top: none;
+      height: 1em;
+      width: 100%;
+    }
+
+    label {
+      align-items: center;
+      display: flex;
+      flex-direction: column;
+      margin-top: -1em;
+      padding: 0px;
+
+      .stonetop-checkbox-wrapper {
+        background-color: white;
+        padding: 5px;
+      }
+    }
+
+    .description {
+      font-style: italic;
+      font-size: 0.8em;
+    }
+  }
+
+  /* Repeating */
+
+  .stonetop-repeating {
+    border: 2px solid $black;
+    padding: 10px;
+    margin-bottom: 10px;
+
+    .stonetop-row {
+      margin-bottom: 20px;
+    }
+
+    label {
+      display: flex;
+      flex-direction: column;
+      padding: 0px;
+      margin-bottom: 10px;
+
+      &.stonetop-repeating-name {
+        padding-right: 10px;
+      }
+
+      span {
+        margin-bottom: 10px;
+      }
+
+      input {
+        width: 100%;
+      }
+
+      select {
+        margin-bottom: 0px;
+        width: 100%;
+      }
+    }
+
+    textarea {
+      margin-bottom: 0px;
+    }
+  }
+
+  /* HP */
+  .stonetop-hp {
+    .stonetop-row {
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 10px;
+    }
+
+    label {
+      align-items: center;
+      display: flex;
+      justify-content: space-between;
+      margin: 0px;
+      padding: 0px;
+
+      span {
+        flex: none;
+        height: auto;
+      }
+    }
+
+    .stonetop-current-hp {
+      height: 50px;
+      width: 50px;
+      position: relative;
+
+      .octagon {
+        height: 25px;
+        top: calc(25px / 2);
+
+        &.bg {
+          &::before {
+            top: -14px;
+            border-bottom: 14px solid;
+            border-bottom-color: inherit;
+            border-left: 14px solid transparent;
+            border-right: 14px solid transparent;
+            width: calc(100% - 28px);
+          }
+
+          &::after {
+            bottom: -14px;
+            border-top: 14px solid;
+            border-top-color: inherit;
+            border-left: 14px solid transparent;
+            border-right: 14px solid transparent;
+            width: calc(100% - 28px);
+          }
+        }
+      }
+
+      .octagon:before {
+        top: -12px;
+        border-bottom: 12px solid;
+        border-bottom-color: inherit;
+        border-left: 12px solid transparent;
+        border-right: 12px solid transparent;
+        width: calc(100% - 24px);
+      }
+
+      .octagon:after {
+        bottom: -12px;
+        border-top: 12px solid;
+        border-top-color: inherit;
+        border-right: 12px solid transparent;
+        border-left: 12px solid transparent;
+        width: calc(100% - 24px);
+      }
+
+      .stonetop-hp-content {
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 100%;
+        align-items: center;
+        display: flex;
+        justify-content: center;
+        width: 100%;
+        z-index: 10;
+
+        span {
+          font-size: 2rem;
+        }
+      }
+    }
+
+    .stonetop-damagedie {
+      margin: 0px;
+      width: 4em;
+    }
+  }
+
+  /* XP */
+  .stonetop-xp {
+    justify-content: space-between;
+
+    label {
+      align-items: center;
+      display: flex;
+      margin: 10px 0px;
+      padding-right: 0px;
+
+      &.level {
+        justify-content: flex-end;
+      }
+
+      span {
+        padding-right: 10px;
+      }
+    }
+  }
+
+  /* Individual Elements */
+
+  .stonetop-character-name {
+    font-size: 1.5em;
+  }
+}
+
+/* Octogon border */
+
+.octagon {
+  border-color: white;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: white;
+  z-index: 2;
+
+  &.bg {
+    border-color: $black;
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    width: calc(100% + 4px);
+    height: calc(100% + 4px);
+    background: $black;
+    z-index: 1;
+
+    &::before {
+      top: -23px;
+      border-bottom: 23px solid;
+      border-bottom-color: inherit;
+      border-left: 23px solid transparent;
+      border-right: 23px solid transparent;
+      width: calc(100% - 46px);
+    }
+
+    &::after {
+      bottom: -23px;
+      border-top: 23px solid;
+      border-top-color: inherit;
+      border-left: 23px solid transparent;
+      border-right: 23px solid transparent;
+      width: calc(100% - 46px);
+    }
+  }
+}
+
+.octagon:before {
+  content: '';
+  position: absolute;
+  top: -22px;
+  left: 0px;
+  width: calc(100% - 44px);
+  height: 0px;
+  border-bottom: 22px solid;
+  border-bottom-color: inherit;
+  border-left: 22px solid transparent;
+  border-right: 22px solid transparent;
+  z-index: 1;
+  color: #ecf0f1;
+  font-size: 20px;
+  text-align: center;
+  font-weight: bold;
+  z-index: 3;
+}
+
+.octagon:after {
+  content: '';
+  position: absolute;
+  bottom: -22px;
+  right: 0px;
+  width: calc(100% - 44px);
+  height: 0px;
+  border-top: 22px solid;
+  border-top-color: inherit;
+  border-right: 22px solid transparent;
+  border-left: 22px solid transparent;
+  z-index: 1;
+}

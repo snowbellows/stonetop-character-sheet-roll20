@@ -1,0 +1,319 @@
+.stonetop-main {
+  display: flex;
+  flex-direction: column;
+  /* Layout */
+  /* General Overrides */
+  /* Heading Fields */
+  /* General Buttons */
+  /* Stats */
+  /* Debilities */
+  /* Repeating */
+  /* HP */
+  /* XP */
+  /* Individual Elements */
+}
+.stonetop-main * {
+  box-sizing: border-box;
+  color: #3a3a46;
+}
+.stonetop-main .stonetop-row {
+  display: flex;
+  align-items: center;
+}
+.stonetop-main .stonetop-column-thirds {
+  align-self: flex-start;
+  flex: 0 0 auto;
+  margin-right: 30px;
+  width: calc(33% - 30px * 2 / 3);
+}
+.stonetop-main .stonetop-column-thirds:last-of-type {
+  margin-right: 0px;
+}
+.stonetop-main h3 {
+  margin: 20px 0px;
+}
+.stonetop-main textarea {
+  width: 100%;
+}
+.stonetop-main .heading-field {
+  align-items: center;
+  display: flex;
+  max-width: 350px;
+  min-width: 150px;
+  margin: 10px 0px;
+  padding: 0px;
+}
+.stonetop-main .heading-field span {
+  flex: none;
+}
+.stonetop-main .heading-field input[type=text] {
+  flex: auto;
+  margin-left: 10px;
+  min-width: 100px;
+}
+.stonetop-main .heading-field input[type=radio] {
+  margin-right: 10px;
+}
+.stonetop-main .heading-field select {
+  margin-left: 10px;
+  margin-bottom: 0px;
+}
+.stonetop-main button[type=roll] {
+  flex: none;
+  height: 23px;
+  width: 23px;
+}
+.stonetop-main .stonetop-stat {
+  height: 100px;
+  margin-bottom: 40px;
+  margin-top: 20px;
+  margin-right: 15px;
+  position: relative;
+  width: calc((100% - 15px * 5) / 6);
+}
+.stonetop-main .stonetop-stat:last-of-type {
+  margin-right: 0px;
+}
+.stonetop-main .stonetop-stat .stonetop-stat-content {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  justify-content: space-between;
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 100%;
+  z-index: 10;
+}
+.stonetop-main .stonetop-stat label {
+  width: auto;
+  padding: 0px;
+}
+.stonetop-main .stonetop-stat input {
+  max-width: 100%;
+  margin-bottom: 10px;
+}
+.stonetop-main .stonetop-debility {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  position: relative;
+}
+.stonetop-main .stonetop-debility .stonetop-grouping-image {
+  border: solid #3a3a46 2px;
+  border-radius: 0px 0px 1em 1em;
+  border-top: none;
+  height: 1em;
+  width: 100%;
+}
+.stonetop-main .stonetop-debility label {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  margin-top: -1em;
+  padding: 0px;
+}
+.stonetop-main .stonetop-debility label .stonetop-checkbox-wrapper {
+  background-color: white;
+  padding: 5px;
+}
+.stonetop-main .stonetop-debility .description {
+  font-style: italic;
+  font-size: 0.8em;
+}
+.stonetop-main .stonetop-repeating {
+  border: 2px solid #3a3a46;
+  padding: 10px;
+  margin-bottom: 10px;
+}
+.stonetop-main .stonetop-repeating .stonetop-row {
+  margin-bottom: 20px;
+}
+.stonetop-main .stonetop-repeating label {
+  display: flex;
+  flex-direction: column;
+  padding: 0px;
+  margin-bottom: 10px;
+}
+.stonetop-main .stonetop-repeating label.stonetop-repeating-name {
+  padding-right: 10px;
+}
+.stonetop-main .stonetop-repeating label span {
+  margin-bottom: 10px;
+}
+.stonetop-main .stonetop-repeating label input {
+  width: 100%;
+}
+.stonetop-main .stonetop-repeating label select {
+  margin-bottom: 0px;
+  width: 100%;
+}
+.stonetop-main .stonetop-repeating textarea {
+  margin-bottom: 0px;
+}
+.stonetop-main .stonetop-hp .stonetop-row {
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+.stonetop-main .stonetop-hp label {
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+  margin: 0px;
+  padding: 0px;
+}
+.stonetop-main .stonetop-hp label span {
+  flex: none;
+  height: auto;
+}
+.stonetop-main .stonetop-hp .stonetop-current-hp {
+  height: 50px;
+  width: 50px;
+  position: relative;
+}
+.stonetop-main .stonetop-hp .stonetop-current-hp .octagon {
+  height: 25px;
+  top: calc(25px / 2);
+}
+.stonetop-main .stonetop-hp .stonetop-current-hp .octagon.bg::before {
+  top: -14px;
+  border-bottom: 14px solid;
+  border-bottom-color: inherit;
+  border-left: 14px solid transparent;
+  border-right: 14px solid transparent;
+  width: calc(100% - 28px);
+}
+.stonetop-main .stonetop-hp .stonetop-current-hp .octagon.bg::after {
+  bottom: -14px;
+  border-top: 14px solid;
+  border-top-color: inherit;
+  border-left: 14px solid transparent;
+  border-right: 14px solid transparent;
+  width: calc(100% - 28px);
+}
+.stonetop-main .stonetop-hp .stonetop-current-hp .octagon:before {
+  top: -12px;
+  border-bottom: 12px solid;
+  border-bottom-color: inherit;
+  border-left: 12px solid transparent;
+  border-right: 12px solid transparent;
+  width: calc(100% - 24px);
+}
+.stonetop-main .stonetop-hp .stonetop-current-hp .octagon:after {
+  bottom: -12px;
+  border-top: 12px solid;
+  border-top-color: inherit;
+  border-right: 12px solid transparent;
+  border-left: 12px solid transparent;
+  width: calc(100% - 24px);
+}
+.stonetop-main .stonetop-hp .stonetop-current-hp .stonetop-hp-content {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  z-index: 10;
+}
+.stonetop-main .stonetop-hp .stonetop-current-hp .stonetop-hp-content span {
+  font-size: 2rem;
+}
+.stonetop-main .stonetop-hp .stonetop-damagedie {
+  margin: 0px;
+  width: 4em;
+}
+.stonetop-main .stonetop-xp {
+  justify-content: space-between;
+}
+.stonetop-main .stonetop-xp label {
+  align-items: center;
+  display: flex;
+  margin: 10px 0px;
+  padding-right: 0px;
+}
+.stonetop-main .stonetop-xp label.level {
+  justify-content: flex-end;
+}
+.stonetop-main .stonetop-xp label span {
+  padding-right: 10px;
+}
+.stonetop-main .stonetop-character-name {
+  font-size: 1.5em;
+}
+
+/* Octogon border */
+.octagon {
+  border-color: white;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: white;
+  z-index: 2;
+}
+.octagon.bg {
+  border-color: #3a3a46;
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  width: calc(100% + 4px);
+  height: calc(100% + 4px);
+  background: #3a3a46;
+  z-index: 1;
+}
+.octagon.bg::before {
+  top: -23px;
+  border-bottom: 23px solid;
+  border-bottom-color: inherit;
+  border-left: 23px solid transparent;
+  border-right: 23px solid transparent;
+  width: calc(100% - 46px);
+}
+.octagon.bg::after {
+  bottom: -23px;
+  border-top: 23px solid;
+  border-top-color: inherit;
+  border-left: 23px solid transparent;
+  border-right: 23px solid transparent;
+  width: calc(100% - 46px);
+}
+
+.octagon:before {
+  content: "";
+  position: absolute;
+  top: -22px;
+  left: 0px;
+  width: calc(100% - 44px);
+  height: 0px;
+  border-bottom: 22px solid;
+  border-bottom-color: inherit;
+  border-left: 22px solid transparent;
+  border-right: 22px solid transparent;
+  z-index: 1;
+  color: #ecf0f1;
+  font-size: 20px;
+  text-align: center;
+  font-weight: bold;
+  z-index: 3;
+}
+
+.octagon:after {
+  content: "";
+  position: absolute;
+  bottom: -22px;
+  right: 0px;
+  width: calc(100% - 44px);
+  height: 0px;
+  border-top: 22px solid;
+  border-top-color: inherit;
+  border-right: 22px solid transparent;
+  border-left: 22px solid transparent;
+  z-index: 1;
+}
