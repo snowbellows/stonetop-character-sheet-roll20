@@ -1,77 +1,85 @@
-
-  <div class="stonetop-main">
-    <label class="stonetop-character-name heading-field">
-      <span>Name:</span>
-      <input type="text" name="attr_character_name" />
-    </label>
-    <label class="heading-field">
-      <span>Pronouns:</span>
-      <input type="text" name="attr_character_pronouns" />
-    </label>
-    <div class="stonetop-row">
-      <div class="stonetop-column-thirds">
-        <label class="heading-field">
-          <span>Player Name:</span>
-          <input type="text" name="attr_player_name" />
-        </label>
-      </div>
-      <div class="stonetop-column-thirds">
-        <label class="heading-field">
-          <span>Player Pronouns:</span>
-          <input type="text" name="attr_player_pronouns" />
-        </label>
-      </div>
-      <div class="stonetop-column-thirds">
-        <div class="stonetop-row stonetop-xp">
-          <label>
-            <span>XP:</span>
-            <input type="number" name="attr_xp" value="0" />
-          </label>
-          <label class="level">
-            <span>Level:</span>
-            <input type="number" name="attr_level" value="1" />
-          </label>
-        </div>
-      </div>
+<div class="stonetop-main">
+  <input type="hidden" class="stonetop-tabstoggle" name="attr_sheetTab" value="character" />
+  <div class="stonetop-tabs" aria-hidden="true">
+    <button type="action" name="act_character" class="character">Character</button>
+    <button type="action" name="act_inventory" class="inventory">Inventory</button>
+    <button type="action" name="act_followers" class="followers">Followers</button>
+  </div>
+  
+<div class="stonetop-character-section">
+  <h1 class="stonetop-sr-only">Character</h1>
+  <label class="stonetop-character-name heading-field">
+    <span>Name:</span>
+    <input type="text" name="attr_character_name" />
+  </label>
+  <label class="heading-field">
+    <span>Pronouns:</span>
+    <input type="text" name="attr_character_pronouns" />
+  </label>
+  <div class="stonetop-row">
+    <div class="stonetop-column-thirds">
+      <label class="heading-field">
+        <span>Player Name:</span>
+        <input type="text" name="attr_player_name" />
+      </label>
     </div>
-    <div class="stonetop-row"></div>
-    <div class="stonetop-row">
-      <div class="stonetop-column-thirds">
-        <label class="heading-field">
-          <span>Playbook:</span>
-          <select name="attr_class">
-            <option disabled selected>Select One</option>
-            <option value="blessed">The Blessed</option>
-            <option value="fox">The Fox</option>
-            <option value="heavy">The Heavy</option>
-            <option value="judge">The Judge</option>
-            <option value="lightbearer">The Lightbearer</option>
-            <option value="marshal">The Marshal</option>
-            <option value="ranger">The Ranger</option>
-            <option value="seeker">The Seeker</option>
-            <option value="would-be-hero">The Would-Be Hero</option>
-          </select>
+    <div class="stonetop-column-thirds">
+      <label class="heading-field">
+        <span>Player Pronouns:</span>
+        <input type="text" name="attr_player_pronouns" />
+      </label>
+    </div>
+    <div class="stonetop-column-thirds">
+      <div class="stonetop-row stonetop-xp">
+        <label>
+          <span>XP:</span>
+          <input type="number" name="attr_xp" value="0" />
         </label>
-      </div>
-      <div class="stonetop-column-thirds">
-        <label class="heading-field">
-          Background:
-          <input type="text" name="attr_background">
-        </label>
-      </div>
-      <div class="stonetop-column-thirds">
-        <label class="heading-field">
-          Drive:
-          <input type="text" name="attr_drive">
+        <label class="level">
+          <span>Level:</span>
+          <input type="number" name="attr_level" value="1" />
         </label>
       </div>
     </div>
-    <div class="stonetop-row">
-      <h3>Stats</h3>
+  </div>
+  <div class="stonetop-row"></div>
+  <div class="stonetop-row">
+    <div class="stonetop-column-thirds">
+      <label class="heading-field">
+        <span>Playbook:</span>
+        <select name="attr_class">
+          <option disabled selected>Select One</option>
+          <option value="blessed">The Blessed</option>
+          <option value="fox">The Fox</option>
+          <option value="heavy">The Heavy</option>
+          <option value="judge">The Judge</option>
+          <option value="lightbearer">The Lightbearer</option>
+          <option value="marshal">The Marshal</option>
+          <option value="ranger">The Ranger</option>
+          <option value="seeker">The Seeker</option>
+          <option value="would-be-hero">The Would-Be Hero</option>
+        </select>
+      </label>
     </div>
-    <div class="stonetop-row">
-      
-        <div class="stonetop-stat">
+    <div class="stonetop-column-thirds">
+      <label class="heading-field">
+        Background:
+        <input type="text" name="attr_background">
+      </label>
+    </div>
+    <div class="stonetop-column-thirds">
+      <label class="heading-field">
+        Drive:
+        <input type="text" name="attr_drive">
+      </label>
+    </div>
+  </div>
+  <div class="stonetop-row">
+    <h3>Stats</h3>
+  </div>
+  <div class="stonetop-row">
+    
+      <div class="stonetop-stat">
   <div class="octagon bg"></div>
   <div class="octagon"></div>
   <div class="stonetop-stat-content">
@@ -83,8 +91,8 @@
       value="/em uses Strength, and rolls [[?{Roll Type | Standard, 2d6 + @{str} | Advantage, 3d6d1 + @{str} | Disadvantage, 3d6dh1 + @{str}}]]"></button>
   </div>
 </div>
-          
-        <div class="stonetop-stat">
+        
+      <div class="stonetop-stat">
   <div class="octagon bg"></div>
   <div class="octagon"></div>
   <div class="stonetop-stat-content">
@@ -96,8 +104,8 @@
       value="/em uses Dexterity, and rolls [[?{Roll Type | Standard, 2d6 + @{dex} | Advantage, 3d6d1 + @{dex} | Disadvantage, 3d6dh1 + @{dex}}]]"></button>
   </div>
 </div>
-          
-        <div class="stonetop-stat">
+        
+      <div class="stonetop-stat">
   <div class="octagon bg"></div>
   <div class="octagon"></div>
   <div class="stonetop-stat-content">
@@ -109,8 +117,8 @@
       value="/em uses Intelligence, and rolls [[?{Roll Type | Standard, 2d6 + @{int} | Advantage, 3d6d1 + @{int} | Disadvantage, 3d6dh1 + @{int}}]]"></button>
   </div>
 </div>
-          
-        <div class="stonetop-stat">
+        
+      <div class="stonetop-stat">
   <div class="octagon bg"></div>
   <div class="octagon"></div>
   <div class="stonetop-stat-content">
@@ -122,8 +130,8 @@
       value="/em uses Wisdom, and rolls [[?{Roll Type | Standard, 2d6 + @{wis} | Advantage, 3d6d1 + @{wis} | Disadvantage, 3d6dh1 + @{wis}}]]"></button>
   </div>
 </div>
-          
-        <div class="stonetop-stat">
+        
+      <div class="stonetop-stat">
   <div class="octagon bg"></div>
   <div class="octagon"></div>
   <div class="stonetop-stat-content">
@@ -135,8 +143,8 @@
       value="/em uses Constitution, and rolls [[?{Roll Type | Standard, 2d6 + @{con} | Advantage, 3d6d1 + @{con} | Disadvantage, 3d6dh1 + @{con}}]]"></button>
   </div>
 </div>
-          
-        <div class="stonetop-stat">
+        
+      <div class="stonetop-stat">
   <div class="octagon bg"></div>
   <div class="octagon"></div>
   <div class="stonetop-stat-content">
@@ -148,12 +156,12 @@
       value="/em uses Charisma, and rolls [[?{Roll Type | Standard, 2d6 + @{cha} | Advantage, 3d6d1 + @{cha} | Disadvantage, 3d6dh1 + @{cha}}]]"></button>
   </div>
 </div>
-          
-    </div>
-    <div class="stonetop-row">
-      
-        <div class="stonetop-column-thirds">
-          <div class="stonetop-debility">
+        
+  </div>
+  <div class="stonetop-row">
+    
+      <div class="stonetop-column-thirds">
+        <div class="stonetop-debility">
   <div class="stonetop-grouping-image"></div>
   <label>
     <div class="stonetop-checkbox-wrapper">
@@ -165,10 +173,10 @@
     (take Disadvantage)
   </span>
 </div>
-        </div>
-        
-        <div class="stonetop-column-thirds">
-          <div class="stonetop-debility">
+      </div>
+      
+      <div class="stonetop-column-thirds">
+        <div class="stonetop-debility">
   <div class="stonetop-grouping-image"></div>
   <label>
     <div class="stonetop-checkbox-wrapper">
@@ -180,10 +188,10 @@
     (take Disadvantage)
   </span>
 </div>
-        </div>
-        
-        <div class="stonetop-column-thirds">
-          <div class="stonetop-debility">
+      </div>
+      
+      <div class="stonetop-column-thirds">
+        <div class="stonetop-debility">
   <div class="stonetop-grouping-image"></div>
   <label>
     <div class="stonetop-checkbox-wrapper">
@@ -195,112 +203,278 @@
     (take Disadvantage)
   </span>
 </div>
-        </div>
-        
-    </div>
-    <div class="stonetop-row">
-      <div class="stonetop-column-thirds">
-        <div class="stonetop-hp">
-          <div class="stonetop-row">
-            <h3>HP</h3>
-            <div class="stonetop-current-hp">
-              <div class="octagon bg"></div>
-              <div class="octagon"></div>
-              <div class="stonetop-hp-content">
-                <span name="attr_hp"></span>
-              </div>
+      </div>
+      
+  </div>
+  <div class="stonetop-row">
+    <div class="stonetop-column-thirds">
+      <div class="stonetop-hp">
+        <div class="stonetop-row">
+          <h3>HP</h3>
+          <div class="stonetop-current-hp">
+            <div class="octagon bg"></div>
+            <div class="octagon"></div>
+            <div class="stonetop-hp-content">
+              <span name="attr_hp"></span>
             </div>
           </div>
+        </div>
+        <div class="stonetop-row">
+          <label>
+            <span>Max:</span>
+            <input type="number" name="attr_hpmax" value="0" />
+          </label>
+        </div>
+        <div class="stonetop-row">
+          <label>
+            <span>Damage Taken:</span>
+            <input type="number" name="attr_damagetaken" value="0" />
+          </label>
+        </div>
+        <div class="stonetop-row">
+          <label>
+            <span>
+              Do Damage: <button type="roll" name="roll_damage"
+                value="/em causes damage, and rolls [[@{damagedie}]]"></button>
+            </span>
+            <select name="attr_damagedie" class="stonetop-damagedie">
+              <option value="0">No Damage</option>
+              <option value="d4">D4</option>
+              <option value="d6">D6</option>
+              <option value="d8">D8</option>
+              <option value="d10">D10</option>
+              <option value="d12">D12</option>
+            </select>
+          </label>
+        </div>
+        <div class="stonetop-row">
+          <label>
+            <span>Armor:</span>
+            <input type="number" name="attr_armor" value="0" />
+          </label>
+        </div>
+      </div>
+      <div class="stonetop-notes">
+        <label for="stonetop-notes"> Notes:</label>
+        <textarea id="stonetop-notes" name="attr_notes"></textarea>
+      </div>
+    </div>
+    <div class="stonetop-column-thirds">
+      <h3>Moves</h3>
+      <fieldset class="repeating_moves">
+        <div class="stonetop-repeating">
           <div class="stonetop-row">
-            <label>
-              <span>Max:</span>
-              <input type="number" name="attr_hpmax" value="0" />
+            <label class="stonetop-repeating-name">
+              <span>Name:</span>
+              <input type="text" name="attr_movename" value="">
             </label>
+            <button type="roll" name="roll_move"
+              value="/em uses @{movename}, and rolls [[?{Roll Type | Standard, 2d6 + @{skillstat} | Advantage, 3d6d1 + @{skillstat} | Disadvantage, 3d6dh1 + @{skillstat}}]]"></button>
           </div>
           <div class="stonetop-row">
             <label>
-              <span>Damage Taken:</span>
-              <input type="number" name="attr_damagetaken" value="0" />
-            </label>
-          </div>
-          <div class="stonetop-row">
-            <label>
-              <span>
-                Damage: <button type="roll" name="roll_damage"
-                  value="/em causes damage, and rolls [[@{damagedie}]]"></button>
-              </span>
-              <select name="attr_damagedie" class="stonetop-damagedie">
-                <option value="0">No Damage</option>
-                <option value="d4">D4</option>
-                <option value="d6">D6</option>
-                <option value="d8">D8</option>
-                <option value="d10">D10</option>
-                <option value="d12">D12</option>
+              <span>Roll Skill: </span>
+              <select name="attr_skillstat" class="skillstat">
+                <option value="0">No Skill</option>
+                <option value="@{str}">Strength</option>
+                <option value="@{dex}">Dexterity</option>
+                <option value="@{int}">Intelligence</option>
+                <option value="@{wis}">Wisdom</option>
+                <option value="@{con}">Constitution</option>
+                <option value="@{cha}">Charisma</option>
               </select>
             </label>
           </div>
+          <label for="stonetop-description"> Description:</label>
+          <textarea id="stonetop-description" name="attr_desription"></textarea>
+        </div>
+      </fieldset>
+    </div>
+    <div class="stonetop-column-thirds">
+      <h3>Special Possessions</h3>
+      <fieldset class="repeating_possessions">
+        <div class="stonetop-repeating">
           <div class="stonetop-row">
             <label>
-              <span>Armor:</span>
-              <input type="number" name="attr_armor" value="0" />
+              <span>Name:</span>
+              <input type="text" name="attr_possessionname" value="">
+            </label>
+          </div>
+          <label for="stonetop-description"> Description:</label>
+          <textarea id="stonetop-description" name="attr_desription"></textarea>
+        </div>
+      </fieldset>
+    </div>
+  </div>
+</div>
+    <div class="stonetop-inventory-section">
+  <h1 class="stonetop-sr-only">Inventory</h1>
+  <div class="stonetop-row">
+    <div class="stonetop-column-thirds">
+      <h3>Have What You Need</h3>
+      <label class="stonetop-inventory-field">
+        <span>Undefined:</span>
+        <input type="number" name="attr_undefinedresources" value="0" />
+      </label>
+      <h3>Supplies</h3>
+      <label class="stonetop-inventory-field">
+        <div class="left">
+          <input type="checkbox" name="attr_supplieschecked">
+          <span>Supplies:</span>
+        </div>
+        <input type="number" name="attr_supplies" value="4" />
+      </label>
+      <label class="stonetop-inventory-field">
+        <div class="left">
+          <input type="checkbox" name="attr_moresupplieschecked">
+          <span>More Supplies:</span>
+        </div>
+        <input type="number" name="attr_moresupplies" value="4" />
+      </label>
+      <label class="stonetop-inventory-field">
+        <div class="left">
+          <input type="checkbox" name="attr_evenmoresupplieschecked">
+          <span>Even More Supplies:</span>
+        </div>
+        <input type="number" name="attr_evenmoresupplies" value="4" />
+      </label>
+    </div>
+    <div class="stonetop-column-thirds">
+      <h3>Large Items</h3>
+      <fieldset class="repeating_largeitems">
+        <div class="stonetop-repeating-inventory">
+          <div class="stonetop-row">
+            <label class="stonetop-inventory-field">
+              <span class="name">Name:</span>
+              <input type="text" name="attr_itemname" value="">
+            </label>
+          </div>
+          <div class="stonetop-row">
+            <label class="stonetop-inventory-field left">
+              <span>Weight:</span>
+              <input type="number" name="attr_itemweight" value="1" />
+            </label>
+            <label class="stonetop-inventory-field">
+              <span>Uses:</span>
+              <input type="number" name="attr_itemuses" value="0" />
             </label>
           </div>
         </div>
-        <div class="stonetop-notes">
-          <label for="stonetop-notes"> Notes:</label>
-          <textarea id="stonetop-notes" name="attr_notes"></textarea>
+      </fieldset>
+    </div>
+    <div class="stonetop-column-thirds">
+      <h3>Small Items</h3>
+      <fieldset class="repeating_smallitems">
+        <div class="stonetop-repeating-inventory">
+          <div class="stonetop-row">
+            <label class="stonetop-inventory-field">
+              <span class="name">Name:</span>
+              <input type="text" name="attr_itemname" value="">
+            </label>
+          </div>
+          <label class="stonetop-inventory-field">
+            <span>Uses:</span>
+            <input type="number" name="attr_itemuses" value="0" />
+          </label>
         </div>
-      </div>
-      <div class="stonetop-column-thirds">
-        <h3>Moves</h3>
-        <fieldset class="repeating_moves">
-          <div class="stonetop-repeating">
-            <div class="stonetop-row">
-              <label class="stonetop-repeating-name">
-                <span>Name:</span>
-                <input type="text" name="attr_movename" value="">
-              </label>
-              <button type="roll" name="roll_move"
-                value="/em uses @{movename}, and rolls [[?{Roll Type | Standard, 2d6 + @{skillstat} | Advantage, 3d6d1 + @{skillstat} | Disadvantage, 3d6dh1 + @{skillstat}}]]"></button>
-            </div>
-            <div class="stonetop-row">
-              <label>
-                <span>Roll Skill: </span>
-                <select name="attr_skillstat" class="skillstat">
-                  <option value="0">No Skill</option>
-                  <option value="@{str}">Strength</option>
-                  <option value="@{dex}">Dexterity</option>
-                  <option value="@{int}">Intelligence</option>
-                  <option value="@{wis}">Wisdom</option>
-                  <option value="@{con}">Constitution</option>
-                  <option value="@{cha}">Charisma</option>
-                </select>
-              </label>
-            </div>
-            <label for="stonetop-description"> Description:</label>
-            <textarea id="stonetop-description" name="attr_desription"></textarea>
-          </div>
-        </fieldset>
-      </div>
-      <div class="stonetop-column-thirds">
-        <h3>Special Possessions</h3>
-        <fieldset class="repeating_possessions">
-          <div class="stonetop-repeating">
-            <div class="stonetop-row">
-              <label>
-                <span>Name:</span>
-                <input type="text" name="attr_possessionname" value="">
-              </label>
-            </div>
-            <label for="stonetop-description"> Description:</label>
-            <textarea id="stonetop-description" name="attr_desription"></textarea>
-          </div>
-        </fieldset>
-      </div>
+      </fieldset>
     </div>
   </div>
+</div>
+      <div class="stonetop-followers-section">
+  <h1 class="stonetop-sr-only">Followers</h1>
+  <fieldset class="repeating_followers">
+    <div class="stonetop-row">
+      <div class="stonetop-repeating-followers">
+        <div class="stonetop-row">
+          <div class="stonetop-column-thirds">
+            <label class="stonetop-follower-header">
+              <span class="name">Name:</span>
+              <input type="text" name="attr_followername" value="">
+            </label>
+          </div>
+          <div class="stonetop-column-thirds">
+            <label class="stonetop-follower-header">
+              <span class="name">Tags:</span>
+              <input type="text" name="attr_followertags" value="">
+            </label>
+          </div>
+          <div class="stonetop-column-thirds">
+            <label class="stonetop-follower-header">
+              <span>Instinct:</span>
+              <input type="text" name="attr_followerinstinct" />
+            </label>
+          </div>
+        </div>
+        <div class="stonetop-row">
+          &lt;div class=&#34;stonetop-stat&#34;&gt;
+  &lt;div class=&#34;octagon bg&#34;&gt;&lt;/div&gt;
+  &lt;div class=&#34;octagon&#34;&gt;&lt;/div&gt;
+  &lt;div class=&#34;stonetop-stat-content&#34;&gt;
+    &lt;label for=&#34;loyalty&#34;&gt;
+      Loyalty
+    &lt;/label&gt;
+    &lt;input id=&#34;loyalty&#34; type=&#34;number&#34; name=&#34;attr_loy&#34; value=&#34;0&#34; /&gt;
+    &lt;button type=&#34;roll&#34; name=&#34;roll_LOYCheck&#34;
+      value=&#34;/em uses Loyalty, and rolls [[?{Roll Type | Standard, 2d6 + @{loy} | Advantage, 3d6d1 + @{loy} | Disadvantage, 3d6dh1 + @{loy}}]]&#34;&gt;&lt;/button&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+            <div class="stonetop-row stonetop-follower-stats">
+              <div class="stonetop-column-thirds">
+                <label class="stonetop-follower-stat">
+                  <span>HP:</span>
+                  <input type="number" name="attr_followerhp" value="0" />
+                </label>
+                <label class="stonetop-follower-stat">
+                  <span>Armor:</span>
+                  <input type="number" name="attr_followerarmor" value="0" />
+                </label>
+                <label class="stonetop-follower-stat stonetop-damage">
+                  <span>
+                    Do Damage:
+                  </span>
+                  <span>
+                    <button type="roll" name="roll_followerdamage"
+                      value="/em The Follower @{followername} causes damage, and rolls [[@{followerdamagedie}]]"></button>
+                    <select name="attr_followerdamagedie" class="stonetop-damagedie">
+                      <option value="0">No Damage</option>
+                      <option value="d4">D4</option>
+                      <option value="d6">D6</option>
+                      <option value="d8">D8</option>
+                      <option value="d10">D10</option>
+                      <option value="d12">D12</option>
+                    </select>
+                  </span>
+                </label>
 
-  <script type="text/worker">
+              </div>
+              <div class="stonetop-column-thirds">
+                <label class="stonetop-follower-text">
+                  <span>Cost:</span>
+                  <input type="text" name="attr_followercost" />
+                </label>
+                <label class="stonetop-follower-text">
+                  <span>Moves:</span>
+                  <input type="text" name="attr_followermoves" />
+                </label>
+                <label class="stonetop-follower-text">
+                  <span>Gear:</span>
+                  <input type="text" name="attr_followergear" />
+                </label>
+              </div>
+              <div class="stonetop-column-thirds stonetop-notes">
+                <label for="stonetop-description"> Notes:</label>
+                <textarea id="stonetop-description" name="attr_followerdesription"></textarea>
+              </div>
+            </div>
+        </div>
+      </div>
+    </div>
+  </fieldset>
+</div>
+</div>
+
+<script type="text/worker">
     on('change:hpmax change:damagetaken sheet:opened', () => {
       getAttrs(['hpmax', 'damagetaken'], (attributes) => {
         const hp = parseInt(attributes.hpmax) - parseInt(attributes.damagetaken);
@@ -308,5 +482,14 @@
           hp: hp || 0,
         });
       });
+    });
+
+    const buttonlist = ['character', 'inventory', 'followers'];
+    buttonlist.forEach(button => {
+        on(`clicked:${button}`, function() {
+            setAttrs({
+                sheetTab: button
+            });
+        });
     });
     </script>

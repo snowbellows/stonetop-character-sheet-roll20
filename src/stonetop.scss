@@ -9,6 +9,68 @@ $black: #3a3a46;
     color: $black;
   }
 
+  .stonetop-sr-only {
+    position: absolute;
+    left: -10000px;
+    top: auto;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+  }
+
+  /* Tabs */
+
+  .stonetop-tabs {
+    border-bottom: 2px solid $black;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+
+    button {
+      background-color: white;
+      border: 2px solid $black;
+      border-bottom: none;
+      border-radius: 5px 5px 0px 0px;
+      color: $black;
+      cursor: pointer;
+      font: inherit;
+      height: 3em;
+      margin: 0px 5px;
+      outline: inherit;
+      padding: 5px;
+    }
+  }
+
+  /* hide all tabs by default */
+  .stonetop-character-section,
+  .stonetop-followers-section,
+  .stonetop-inventory-section {
+    position: absolute;
+    left: -10000px;
+    top: auto;
+    width: 1px;
+    height: 1px;
+    overflow: visible;
+  }
+
+  /* show the selected tab */
+  .stonetop-tabstoggle[value='character'] ~ div.stonetop-character-section,
+  .stonetop-tabstoggle[value='inventory'] ~ div.stonetop-inventory-section,
+  .stonetop-tabstoggle[value='followers'] ~ div.stonetop-followers-section {
+    height: auto;
+    left: auto;
+    position: relative;
+    width: auto;
+  }
+
+  /* style associated tab */
+  .stonetop-tabstoggle[value='character'] ~ .stonetop-tabs button.character,
+  .stonetop-tabstoggle[value='inventory'] ~ .stonetop-tabs button.inventory,
+  .stonetop-tabstoggle[value='followers'] ~ .stonetop-tabs button.followers {
+    background-color: $black;
+    color: white;
+  }
+
   /* Layout */
 
   .stonetop-row {
@@ -281,7 +343,7 @@ $black: #3a3a46;
 
     .stonetop-damagedie {
       margin: 0px;
-      width: 4em;
+      width: 8em;
     }
   }
 
@@ -302,6 +364,113 @@ $black: #3a3a46;
       span {
         padding-right: 10px;
       }
+    }
+  }
+
+  /* Inventory */
+  label.stonetop-inventory-field {
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+    padding-right: 0;
+
+    &.left {
+      margin-right: 10px;
+    }
+
+    .left {
+      align-items: center;
+      display: flex;
+      justify-content: space-between;
+
+      input[type='checkbox'] {
+        margin-right: 10px;
+      }
+    }
+  }
+
+  .stonetop-repeating-inventory {
+    border-bottom: 2px solid $black;
+    margin-bottom: 20px;
+    .name {
+      padding-right: 10px;
+    }
+  }
+
+  /* Followers */
+  .stonetop-repeating-followers {
+    border-bottom: 2px solid $black;
+    margin-bottom: 20px;
+    width: 100%;
+
+    .stonetop-follower-header {
+      align-items: center;
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 30px;
+      padding: 0;
+      width: 100%;
+
+      input {
+        flex: 1 1 auto;
+        margin-left: 10px;
+        min-width: 6em;
+      }
+    }
+
+    .stonetop-follower-text {
+      display: flex;
+      flex-direction: column;
+
+      span {
+        margin-bottom: 10px;
+      }
+    }
+
+    .stonetop-notes {
+      display: flex;
+      height: 100%;
+      flex-direction: column;
+
+      textarea {
+        flex: 1 0 auto;
+      }
+    }
+
+    .stonetop-follower-stats {
+      flex: 1 0 auto;
+
+      .stonetop-follower-stat {
+        align-items: center;
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 10px;
+        width: 100%;
+
+        &.stonetop-damage {
+          flex-direction: column;
+          align-items: flex-start;
+
+          span {
+            margin-bottom: 10px;
+          }
+        }
+
+        .stonetop-damagedie {
+          margin: 0px;
+          width: 8em;
+        }
+      }
+
+      .stonetop-stat-follower {
+        .stonetop-stat {
+          width: 100%;
+        }
+      }
+    }
+
+    .name {
+      padding-right: 10px;
     }
   }
 

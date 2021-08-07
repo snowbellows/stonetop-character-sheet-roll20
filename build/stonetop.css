@@ -1,6 +1,10 @@
 .stonetop-main {
   display: flex;
   flex-direction: column;
+  /* Tabs */
+  /* hide all tabs by default */
+  /* show the selected tab */
+  /* style associated tab */
   /* Layout */
   /* General Overrides */
   /* Heading Fields */
@@ -10,11 +14,64 @@
   /* Repeating */
   /* HP */
   /* XP */
+  /* Inventory */
+  /* Followers */
   /* Individual Elements */
 }
 .stonetop-main * {
   box-sizing: border-box;
   color: #3a3a46;
+}
+.stonetop-main .stonetop-sr-only {
+  position: absolute;
+  left: -10000px;
+  top: auto;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+}
+.stonetop-main .stonetop-tabs {
+  border-bottom: 2px solid #3a3a46;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+.stonetop-main .stonetop-tabs button {
+  background-color: white;
+  border: 2px solid #3a3a46;
+  border-bottom: none;
+  border-radius: 5px 5px 0px 0px;
+  color: #3a3a46;
+  cursor: pointer;
+  font: inherit;
+  height: 3em;
+  margin: 0px 5px;
+  outline: inherit;
+  padding: 5px;
+}
+.stonetop-main .stonetop-character-section,
+.stonetop-main .stonetop-followers-section,
+.stonetop-main .stonetop-inventory-section {
+  position: absolute;
+  left: -10000px;
+  top: auto;
+  width: 1px;
+  height: 1px;
+  overflow: visible;
+}
+.stonetop-main .stonetop-tabstoggle[value=character] ~ div.stonetop-character-section,
+.stonetop-main .stonetop-tabstoggle[value=inventory] ~ div.stonetop-inventory-section,
+.stonetop-main .stonetop-tabstoggle[value=followers] ~ div.stonetop-followers-section {
+  height: auto;
+  left: auto;
+  position: relative;
+  width: auto;
+}
+.stonetop-main .stonetop-tabstoggle[value=character] ~ .stonetop-tabs button.character,
+.stonetop-main .stonetop-tabstoggle[value=inventory] ~ .stonetop-tabs button.inventory,
+.stonetop-main .stonetop-tabstoggle[value=followers] ~ .stonetop-tabs button.followers {
+  background-color: #3a3a46;
+  color: white;
 }
 .stonetop-main .stonetop-row {
   display: flex;
@@ -226,7 +283,7 @@
 }
 .stonetop-main .stonetop-hp .stonetop-damagedie {
   margin: 0px;
-  width: 4em;
+  width: 8em;
 }
 .stonetop-main .stonetop-xp {
   justify-content: space-between;
@@ -241,6 +298,90 @@
   justify-content: flex-end;
 }
 .stonetop-main .stonetop-xp label span {
+  padding-right: 10px;
+}
+.stonetop-main label.stonetop-inventory-field {
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+  padding-right: 0;
+}
+.stonetop-main label.stonetop-inventory-field.left {
+  margin-right: 10px;
+}
+.stonetop-main label.stonetop-inventory-field .left {
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+}
+.stonetop-main label.stonetop-inventory-field .left input[type=checkbox] {
+  margin-right: 10px;
+}
+.stonetop-main .stonetop-repeating-inventory {
+  border-bottom: 2px solid #3a3a46;
+  margin-bottom: 20px;
+}
+.stonetop-main .stonetop-repeating-inventory .name {
+  padding-right: 10px;
+}
+.stonetop-main .stonetop-repeating-followers {
+  border-bottom: 2px solid #3a3a46;
+  margin-bottom: 20px;
+  width: 100%;
+}
+.stonetop-main .stonetop-repeating-followers .stonetop-follower-header {
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 30px;
+  padding: 0;
+  width: 100%;
+}
+.stonetop-main .stonetop-repeating-followers .stonetop-follower-header input {
+  flex: 1 1 auto;
+  margin-left: 10px;
+  min-width: 6em;
+}
+.stonetop-main .stonetop-repeating-followers .stonetop-follower-text {
+  display: flex;
+  flex-direction: column;
+}
+.stonetop-main .stonetop-repeating-followers .stonetop-follower-text span {
+  margin-bottom: 10px;
+}
+.stonetop-main .stonetop-repeating-followers .stonetop-notes {
+  display: flex;
+  height: 100%;
+  flex-direction: column;
+}
+.stonetop-main .stonetop-repeating-followers .stonetop-notes textarea {
+  flex: 1 0 auto;
+}
+.stonetop-main .stonetop-repeating-followers .stonetop-follower-stats {
+  flex: 1 0 auto;
+}
+.stonetop-main .stonetop-repeating-followers .stonetop-follower-stats .stonetop-follower-stat {
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px;
+  width: 100%;
+}
+.stonetop-main .stonetop-repeating-followers .stonetop-follower-stats .stonetop-follower-stat.stonetop-damage {
+  flex-direction: column;
+  align-items: flex-start;
+}
+.stonetop-main .stonetop-repeating-followers .stonetop-follower-stats .stonetop-follower-stat.stonetop-damage span {
+  margin-bottom: 10px;
+}
+.stonetop-main .stonetop-repeating-followers .stonetop-follower-stats .stonetop-follower-stat .stonetop-damagedie {
+  margin: 0px;
+  width: 8em;
+}
+.stonetop-main .stonetop-repeating-followers .stonetop-follower-stats .stonetop-stat-follower .stonetop-stat {
+  width: 100%;
+}
+.stonetop-main .stonetop-repeating-followers .name {
   padding-right: 10px;
 }
 .stonetop-main .stonetop-character-name {

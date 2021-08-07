@@ -1,0 +1,74 @@
+<div class="stonetop-inventory-section">
+  <h1 class="stonetop-sr-only">Inventory</h1>
+  <div class="stonetop-row">
+    <div class="stonetop-column-thirds">
+      <h3>Have What You Need</h3>
+      <label class="stonetop-inventory-field">
+        <span>Undefined:</span>
+        <input type="number" name="attr_undefinedresources" value="0" />
+      </label>
+      <h3>Supplies</h3>
+      <label class="stonetop-inventory-field">
+        <div class="left">
+          <input type="checkbox" name="attr_supplieschecked">
+          <span>Supplies:</span>
+        </div>
+        <input type="number" name="attr_supplies" value="4" />
+      </label>
+      <label class="stonetop-inventory-field">
+        <div class="left">
+          <input type="checkbox" name="attr_moresupplieschecked">
+          <span>More Supplies:</span>
+        </div>
+        <input type="number" name="attr_moresupplies" value="4" />
+      </label>
+      <label class="stonetop-inventory-field">
+        <div class="left">
+          <input type="checkbox" name="attr_evenmoresupplieschecked">
+          <span>Even More Supplies:</span>
+        </div>
+        <input type="number" name="attr_evenmoresupplies" value="4" />
+      </label>
+    </div>
+    <div class="stonetop-column-thirds">
+      <h3>Large Items</h3>
+      <fieldset class="repeating_largeitems">
+        <div class="stonetop-repeating-inventory">
+          <div class="stonetop-row">
+            <label class="stonetop-inventory-field">
+              <span class="name">Name:</span>
+              <input type="text" name="attr_itemname" value="">
+            </label>
+          </div>
+          <div class="stonetop-row">
+            <label class="stonetop-inventory-field left">
+              <span>Weight:</span>
+              <input type="number" name="attr_itemweight" value="1" />
+            </label>
+            <label class="stonetop-inventory-field">
+              <span>Uses:</span>
+              <input type="number" name="attr_itemuses" value="0" />
+            </label>
+          </div>
+        </div>
+      </fieldset>
+    </div>
+    <div class="stonetop-column-thirds">
+      <h3>Small Items</h3>
+      <fieldset class="repeating_smallitems">
+        <div class="stonetop-repeating-inventory">
+          <div class="stonetop-row">
+            <label class="stonetop-inventory-field">
+              <span class="name">Name:</span>
+              <input type="text" name="attr_itemname" value="">
+            </label>
+          </div>
+          <label class="stonetop-inventory-field">
+            <span>Uses:</span>
+            <input type="number" name="attr_itemuses" value="0" />
+          </label>
+        </div>
+      </fieldset>
+    </div>
+  </div>
+</div>

@@ -1,191 +1,16 @@
-<% var data={ stats: [ { name: "Strength" , attr : "str" }, { name : "Dexterity" , attr : "dex" }, { name
-  : "Intelligence" , attr : "int" }, { name : "Wisdom" , attr : "wis" }, { name : "Constitution" , attr: "con" }, { name
-  : "Charisma" , attr : "cha" } ], debilities: [ {name: 'Weakened' }, {name: 'Dazed' }, {name: 'Miserable' } ] } %>
-  <div class="stonetop-main">
-    <label class="stonetop-character-name heading-field">
-      <span>Name:</span>
-      <input type="text" name="attr_character_name" />
-    </label>
-    <label class="heading-field">
-      <span>Pronouns:</span>
-      <input type="text" name="attr_character_pronouns" />
-    </label>
-    <div class="stonetop-row">
-      <div class="stonetop-column-thirds">
-        <label class="heading-field">
-          <span>Player Name:</span>
-          <input type="text" name="attr_player_name" />
-        </label>
-      </div>
-      <div class="stonetop-column-thirds">
-        <label class="heading-field">
-          <span>Player Pronouns:</span>
-          <input type="text" name="attr_player_pronouns" />
-        </label>
-      </div>
-      <div class="stonetop-column-thirds">
-        <div class="stonetop-row stonetop-xp">
-          <label>
-            <span>XP:</span>
-            <input type="number" name="attr_xp" value="0" />
-          </label>
-          <label class="level">
-            <span>Level:</span>
-            <input type="number" name="attr_level" value="1" />
-          </label>
-        </div>
-      </div>
-    </div>
-    <div class="stonetop-row"></div>
-    <div class="stonetop-row">
-      <div class="stonetop-column-thirds">
-        <label class="heading-field">
-          <span>Playbook:</span>
-          <select name="attr_class">
-            <option disabled selected>Select One</option>
-            <option value="blessed">The Blessed</option>
-            <option value="fox">The Fox</option>
-            <option value="heavy">The Heavy</option>
-            <option value="judge">The Judge</option>
-            <option value="lightbearer">The Lightbearer</option>
-            <option value="marshal">The Marshal</option>
-            <option value="ranger">The Ranger</option>
-            <option value="seeker">The Seeker</option>
-            <option value="would-be-hero">The Would-Be Hero</option>
-          </select>
-        </label>
-      </div>
-      <div class="stonetop-column-thirds">
-        <label class="heading-field">
-          Background:
-          <input type="text" name="attr_background">
-        </label>
-      </div>
-      <div class="stonetop-column-thirds">
-        <label class="heading-field">
-          Drive:
-          <input type="text" name="attr_drive">
-        </label>
-      </div>
-    </div>
-    <div class="stonetop-row">
-      <h3>Stats</h3>
-    </div>
-    <div class="stonetop-row">
-      <% data.stats.forEach(stat=> { %>
-        <%- include('components/_stat', {name: stat.name, attr: stat.attr}) %>
-          <% }); %>
-    </div>
-    <div class="stonetop-row">
-      <% data.debilities.forEach(debility=> { %>
-        <div class="stonetop-column-thirds">
-          <%- include('components/_debility', {name: debility.name}) %>
-        </div>
-        <% }); %>
-    </div>
-    <div class="stonetop-row">
-      <div class="stonetop-column-thirds">
-        <div class="stonetop-hp">
-          <div class="stonetop-row">
-            <h3>HP</h3>
-            <div class="stonetop-current-hp">
-              <div class="octagon bg"></div>
-              <div class="octagon"></div>
-              <div class="stonetop-hp-content">
-                <span name="attr_hp"></span>
-              </div>
-            </div>
-          </div>
-          <div class="stonetop-row">
-            <label>
-              <span>Max:</span>
-              <input type="number" name="attr_hpmax" value="0" />
-            </label>
-          </div>
-          <div class="stonetop-row">
-            <label>
-              <span>Damage Taken:</span>
-              <input type="number" name="attr_damagetaken" value="0" />
-            </label>
-          </div>
-          <div class="stonetop-row">
-            <label>
-              <span>
-                Damage: <button type="roll" name="roll_damage"
-                  value="/em causes damage, and rolls [[@{damagedie}]]"></button>
-              </span>
-              <select name="attr_damagedie" class="stonetop-damagedie">
-                <option value="0">No Damage</option>
-                <option value="d4">D4</option>
-                <option value="d6">D6</option>
-                <option value="d8">D8</option>
-                <option value="d10">D10</option>
-                <option value="d12">D12</option>
-              </select>
-            </label>
-          </div>
-          <div class="stonetop-row">
-            <label>
-              <span>Armor:</span>
-              <input type="number" name="attr_armor" value="0" />
-            </label>
-          </div>
-        </div>
-        <div class="stonetop-notes">
-          <label for="stonetop-notes"> Notes:</label>
-          <textarea id="stonetop-notes" name="attr_notes"></textarea>
-        </div>
-      </div>
-      <div class="stonetop-column-thirds">
-        <h3>Moves</h3>
-        <fieldset class="repeating_moves">
-          <div class="stonetop-repeating">
-            <div class="stonetop-row">
-              <label class="stonetop-repeating-name">
-                <span>Name:</span>
-                <input type="text" name="attr_movename" value="">
-              </label>
-              <button type="roll" name="roll_move"
-                value="/em uses @{movename}, and rolls [[?{Roll Type | Standard, 2d6 + @{skillstat} | Advantage, 3d6d1 + @{skillstat} | Disadvantage, 3d6dh1 + @{skillstat}}]]"></button>
-            </div>
-            <div class="stonetop-row">
-              <label>
-                <span>Roll Skill: </span>
-                <select name="attr_skillstat" class="skillstat">
-                  <option value="0">No Skill</option>
-                  <option value="@{str}">Strength</option>
-                  <option value="@{dex}">Dexterity</option>
-                  <option value="@{int}">Intelligence</option>
-                  <option value="@{wis}">Wisdom</option>
-                  <option value="@{con}">Constitution</option>
-                  <option value="@{cha}">Charisma</option>
-                </select>
-              </label>
-            </div>
-            <label for="stonetop-description"> Description:</label>
-            <textarea id="stonetop-description" name="attr_desription"></textarea>
-          </div>
-        </fieldset>
-      </div>
-      <div class="stonetop-column-thirds">
-        <h3>Special Possessions</h3>
-        <fieldset class="repeating_possessions">
-          <div class="stonetop-repeating">
-            <div class="stonetop-row">
-              <label>
-                <span>Name:</span>
-                <input type="text" name="attr_possessionname" value="">
-              </label>
-            </div>
-            <label for="stonetop-description"> Description:</label>
-            <textarea id="stonetop-description" name="attr_desription"></textarea>
-          </div>
-        </fieldset>
-      </div>
-    </div>
+<div class="stonetop-main">
+  <input type="hidden" class="stonetop-tabstoggle" name="attr_sheetTab" value="character" />
+  <div class="stonetop-tabs" aria-hidden="true">
+    <button type="action" name="act_character" class="character">Character</button>
+    <button type="action" name="act_inventory" class="inventory">Inventory</button>
+    <button type="action" name="act_followers" class="followers">Followers</button>
   </div>
+  <%- include('pages/_character') %>
+    <%- include('pages/_inventory') %>
+      <%- include('pages/_followers') %>
+</div>
 
-  <script type="text/worker">
+<script type="text/worker">
     on('change:hpmax change:damagetaken sheet:opened', () => {
       getAttrs(['hpmax', 'damagetaken'], (attributes) => {
         const hp = parseInt(attributes.hpmax) - parseInt(attributes.damagetaken);
@@ -193,5 +18,14 @@
           hp: hp || 0,
         });
       });
+    });
+
+    const buttonlist = ['character', 'inventory', 'followers'];
+    buttonlist.forEach(button => {
+        on(`clicked:${button}`, function() {
+            setAttrs({
+                sheetTab: button
+            });
+        });
     });
     </script>

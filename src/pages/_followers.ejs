@@ -1,0 +1,80 @@
+<div class="stonetop-followers-section">
+  <h1 class="stonetop-sr-only">Followers</h1>
+  <fieldset class="repeating_followers">
+    <div class="stonetop-row">
+      <div class="stonetop-repeating-followers">
+        <div class="stonetop-row">
+          <div class="stonetop-column-thirds">
+            <label class="stonetop-follower-header">
+              <span class="name">Name:</span>
+              <input type="text" name="attr_followername" value="">
+            </label>
+          </div>
+          <div class="stonetop-column-thirds">
+            <label class="stonetop-follower-header">
+              <span class="name">Tags:</span>
+              <input type="text" name="attr_followertags" value="">
+            </label>
+          </div>
+          <div class="stonetop-column-thirds">
+            <label class="stonetop-follower-header">
+              <span>Instinct:</span>
+              <input type="text" name="attr_followerinstinct" />
+            </label>
+          </div>
+        </div>
+        <div class="stonetop-row">
+          <%= include('../components/_stat', {name: 'Loyalty' , attr: 'loy' }) %>
+            <div class="stonetop-row stonetop-follower-stats">
+              <div class="stonetop-column-thirds">
+                <label class="stonetop-follower-stat">
+                  <span>HP:</span>
+                  <input type="number" name="attr_followerhp" value="0" />
+                </label>
+                <label class="stonetop-follower-stat">
+                  <span>Armor:</span>
+                  <input type="number" name="attr_followerarmor" value="0" />
+                </label>
+                <label class="stonetop-follower-stat stonetop-damage">
+                  <span>
+                    Do Damage:
+                  </span>
+                  <span>
+                    <button type="roll" name="roll_followerdamage"
+                      value="/em The Follower @{followername} causes damage, and rolls [[@{followerdamagedie}]]"></button>
+                    <select name="attr_followerdamagedie" class="stonetop-damagedie">
+                      <option value="0">No Damage</option>
+                      <option value="d4">D4</option>
+                      <option value="d6">D6</option>
+                      <option value="d8">D8</option>
+                      <option value="d10">D10</option>
+                      <option value="d12">D12</option>
+                    </select>
+                  </span>
+                </label>
+
+              </div>
+              <div class="stonetop-column-thirds">
+                <label class="stonetop-follower-text">
+                  <span>Cost:</span>
+                  <input type="text" name="attr_followercost" />
+                </label>
+                <label class="stonetop-follower-text">
+                  <span>Moves:</span>
+                  <input type="text" name="attr_followermoves" />
+                </label>
+                <label class="stonetop-follower-text">
+                  <span>Gear:</span>
+                  <input type="text" name="attr_followergear" />
+                </label>
+              </div>
+              <div class="stonetop-column-thirds stonetop-notes">
+                <label for="stonetop-description"> Notes:</label>
+                <textarea id="stonetop-description" name="attr_followerdesription"></textarea>
+              </div>
+            </div>
+        </div>
+      </div>
+    </div>
+  </fieldset>
+</div>
